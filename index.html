@@ -657,9 +657,35 @@
 </div>
 <div id="sparkleContainer"></div>
 <script>
-  function onSubmit(token) {
-    document.getElementById("contact-form").submit();
-  }
+    function onSubmit(token) {
+        const form = document.getElementById("contact-form");
+        const submitButton = form.querySelector('button[type="submit"]');
+        const loadingAnimation = document.getElementById('loadingAnimation');
+        const successMessage = document.getElementById('successMessage');
+
+        // Disable the submit button and show the loading animation
+        submitButton.disabled = true;
+        loadingAnimation.style.display = 'block';
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Hide the loading animation and show the success message
+                loadingAnimation.style.display = 'none';
+                successMessage.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Re-enable the submit button if there's an error
+                submitButton.disabled = false;
+                loadingAnimation.style.display = 'none';
+            });
+    }
 
   function openNav() {
   document.getElementById("meniuCuratel").classList.add("open");
@@ -714,37 +740,6 @@
     }
     return null;
   }
-
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const submitButton = this.querySelector('button[type="submit"]');
-      const loadingAnimation = document.getElementById('loadingAnimation');
-      const successMessage = document.getElementById('successMessage');
-
-      // Disable the submit button and show the loading animation
-      submitButton.disabled = true;
-      loadingAnimation.style.display = 'block';
-
-      const formData = new FormData(this);
-
-      fetch(this.action, {
-          method: 'POST',
-          body: formData
-      })
-          .then(response => response.json())
-          .then(data => {
-              // Hide the loading animation and show the success message
-              loadingAnimation.style.display = 'none';
-              successMessage.style.display = 'block';
-          })
-          .catch(error => {
-              console.error('Error:', error);
-              // Re-enable the submit button if there's an error
-              submitButton.disabled = false;
-              loadingAnimation.style.display = 'none';
-          });
-  });
 </script>
 
 </body>
