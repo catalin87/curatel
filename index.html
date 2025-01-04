@@ -690,6 +690,8 @@
                     successMessage.textContent = data.message;
                     successMessage.style.display = 'block';
                     errorMessage.style.display = 'none';
+                    // Clear the form inputs
+                    form.reset();
                 } else {
                     // Show the error message
                     errorMessage.textContent = data.message;
