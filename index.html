@@ -623,6 +623,7 @@
                                 <input name="csrfToken" type="hidden" value="">
                                 <div id="loadingAnimation" style="display: none;">Loading...</div>
                                 <div id="successMessage" style="display: none;">Mesajul dumneavoastra a fost transmis. Va vom raspunde in maxim 24 de ore.</div>
+                                <div id="errorMessage" style="display: none; color: red;"></div>
                                 <button class="g-recaptcha modern-button"
                                         data-sitekey="6LdhHK4qAAAAAKtcoxAD1wzXfeI8iY313OZcC13d"
                                         data-callback='onSubmit'
@@ -662,6 +663,7 @@
         const submitButton = form.querySelector('button[type="submit"]');
         const loadingAnimation = document.getElementById('loadingAnimation');
         const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
 
         // Disable the submit button and show the loading animation
         submitButton.disabled = true;
@@ -680,15 +682,29 @@
         })
             .then(response => response.json())
             .then(data => {
-                // Hide the loading animation and show the success message
+                // Hide the loading animation
                 loadingAnimation.style.display = 'none';
-                successMessage.style.display = 'block';
+
+                if (data.success) {
+                    // Show the success message
+                    successMessage.textContent = data.message;
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                } else {
+                    // Show the error message
+                    errorMessage.textContent = data.message;
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
                 // Re-enable the submit button if there's an error
                 submitButton.disabled = false;
                 loadingAnimation.style.display = 'none';
+                errorMessage.textContent = 'An unexpected error occurred. Please try again later.';
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
             });
     }
 
