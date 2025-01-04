@@ -1,25 +1,548 @@
-<!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
-  <title>Centered Image</title>
-  <style>
-    body {
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh; /* Make the body fill the viewport height */
-    }
-
-    img {
-      max-width: 1024px; /* Set maximum width */
-      width: auto; /* Maintain aspect ratio */
-      display: block; /* Remove default margin for images */
-      margin: 0 auto; /* Center horizontally */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <link href="/vite.svg" rel="icon" type="image/svg+xml">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Servicii de curatenie Constanta - Curatel</title>
+    <meta content="Contact our cleaning company in Constanta, Romania." data-rh="true" name="description">
+    <link crossorigin="" href="./css/app.css" rel="stylesheet">
 </head>
 <body>
-  <img src="building.jpg" alt="Curatel">
+<div id="root">
+    <div class="App">
+        <div class="overlay" id="meniuCuratel">
+
+            <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+
+            <div class="overlay-content">
+                <a href="#home">Acasa la Curatel</a>
+                <a href="#despre">Despre</a>
+                <a href="#servicii">Servicii</a>
+                <a href="#preturi">Tarife</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+
+        <span class="hamburger" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </span>
+
+        <div>
+            <div>
+                <div id="home">
+                    <div class="container">
+                        <section class="section">
+                            <h1 class="title inter-font">Servicii de curatenie</h1>
+
+                            <div class="subtitle-box">
+                                <p class="subtitle">La Curățel, transformăm casele și spațiile de locuit în locuri
+                                    impecabile și primitoare, cu servicii profesionale, prețuri corecte și produse de
+                                    calitate – contactează-ne și descoperă cum putem aduce prospețime în viața ta!</p>
+                            </div>
+                            <img alt="Curatel Logo" class="logo" src="./logo_curatel.webp">
+                            <div class="call-to-action">
+                                <button class="contact-button">
+                                    <div class="button-content">
+                                        <svg class="icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
+                                        </svg>
+                                        <div>
+                                            <div>Sună-l pe Curatel</div>
+                                            <div>0765.470.519</div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="contact-button whatsapp-button">
+                                    <div class="button-content">
+                                        <svg class="icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 448 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                                        </svg>
+                                        <div>
+                                            <div>Curatel are si</div>
+                                            <div>Whatsapp</div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="section" id="despre">
+                        <h1 class="title inter-font">Despre Curatel</h1>
+                        <div class="subtitle-box">
+                            <p>Curățel oferă servicii profesionale de curățenie în Constanța pentru case, apartamente și
+                                spații de lucru. Cu o echipă experimentată, ne concentrăm pe <strong>atenția la
+                                    detalii</strong> și pe crearea unui mediu curat și primitor.</p>
+                            <p>Folosim <strong>produse de curățenie de calitate</strong> și implementăm un sistem de
+                                control riguros pentru a asigura cele mai bune rezultate. Echipa noastră participă la
+                                <strong>training-uri periodice</strong>, pentru a fi mereu la standarde înalte.</p>
+                            <p>Alege Curățel pentru servicii de încredere și calitate! Contactează-ne pentru <strong>curățenie
+                                apartament Constanța</strong>,<strong>curățenie casă Constanța</strong> sau alte nevoi
+                                de curățenie.</p>
+                            <div class="image-container">
+                                <img alt="Curățenie Apartament 1"
+                                     src="./img_curatenie_apartament_1.png">
+                                <img
+                                        alt="Curățenie Apartament 2" src="./img_curatenie_apartament_2.png">
+                            </div>
+                    </div>
+                </div>
+                <div class="section" id="servicii">
+                    <h1 class="title inter-font">Servicii de curatenie</h1>
+
+                    <div class="subtitle-box">
+                        <section class="section">
+                            <button class="tablink" onclick="openPage('curatenieIntretinere', this, 'green')">
+                                Curatenie de intretinere
+                            </button>
+                            <button class="tablink" id="defaultOpen" onclick="openPage('curatenieGenerala', this, 'green')">
+                                Curatenie generala
+                            </button>
+
+                            <div class="tabcontent" id="curatenieIntretinere">
+                                <ul class="service-list">
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Aspirare
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Spalare pardoseli
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Curatare mobilier - indepartarea prafului, a urmelor de lichide si amprente
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Curatare si dezinfectare grupuri sanitare
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Curatare prin aspirare a scaunelor, fotoliilor si a canapelelor
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Curatare corpuri de iluminat
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Curatare geamuri interior si exterior (la parter) - lunar
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Inlocuire lenjerie pat
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Degajarea gunoiului si inlocuire saci menajeri
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Aerisirea si improspatarea ambientului
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Spalare frigidere - lunar
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tabcontent" id="curatenieGenerala">
+                                <ul class="service-list">
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Spalare geamuri interior si exterior (la parter)
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Curatare tocuri, usi, prize, plinte
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Stergere corpuri de iluminat
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Dezinfectare aparatura de birou
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Dezinfectare feronerie
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Curatare mobilier (birouri, mese, rafturi, etc.)
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Aspirare tapiterie scaune, canapele, fotolii
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Inlocuire lenjerie pat
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Aspirare covoare
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Stergerea/aspirarea podelelor
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Aspirarea/stergerea pardoselii dure
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Dezinfectarea si curatarea grupurilor sanitare si a bucatariei
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Degajarea gunoiului si inlocuire saci menajeri
+                                    </li>
+                                    <li class="service-item">
+                                        <svg class="check-icon" fill="currentColor" height="1em"
+                                             stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+                                        </svg>
+                                        Indepartarea panzelor de paianjen
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+                <div class="section" id="preturi">
+                    <h1 class="title inter-font">Tarife Curatel</h1>
+
+                        <div class="subtitle-box">
+                            <p class="subtitle">Simplu, Curat, Curățel: vezi tarifele noastre transparente!</p>
+                            <table class="costs-table">
+                                <thead>
+                                <tr>
+                                    <th>Tip locuinta</th>
+                                    <th>Curatenie de intretinere</th>
+                                    <th>Curatenie generala</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Garsoniera</td>
+                                    <td>250 RON (2 ore)</td>
+                                    <td>350 RON (3 ore)</td>
+                                </tr>
+                                <tr>
+                                    <td>Apartament 2 camere</td>
+                                    <td>500 RON (3 ore)</td>
+                                    <td>350 RON (4 ore)</td>
+                                </tr>
+                                <tr>
+                                    <td>Apartament 3 camere</td>
+                                    <td>450 RON (4 ore)</td>
+                                    <td>600 RON (6 ore)</td>
+                                </tr>
+                                <tr>
+                                    <td>Apartament 4 camere</td>
+                                    <td>550 RON (5 ore)</td>
+                                    <td>750 RON (7 ore)</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt; 4 camere</td>
+                                    <td>5 RON/m2</td>
+                                    <td>10 RON/m2</td>
+                                </tr>
+                                <tr>
+                                    <td>Case / Vile</td>
+                                    <td>5 RON/m2</td>
+                                    <td>10 RON/m2</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <blockquote class="additional-info">Curatenie se face cu produsele noastre<br>Durata
+                                curateniei este aproximativa<br>Preturi valabile pentru maxim 2 bai<br>Pentru abonamente
+                                saptamanale preturile se negociaza
+                            </blockquote>
+                    </div>
+                </div>
+                <div >
+                    <div class="container" id="contact">
+                        <h1 class="title inter-font">Contact</h1>
+
+                        <div class="subtitle-box">
+                            <p class="subtitle">Pentru programări, vă rugăm să ne contactați cu cel puțin 24 de ore în
+                                avans.<br/>
+                                Stabilim împreună un interval convenabil, adaptat programului dumneavoastră și
+                                disponibilității noastre.</p>
+
+                            <div class="contact-buttons"><a class="button whatsapp-button"
+                                                            href="https://wa.me/0040765470519">
+                                <svg fill="currentColor" height="1em" stroke="currentColor" stroke-width="0"
+                                     viewBox="0 0 448 512" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                                </svg>
+                                WhatsApp</a><a class="button phone-button" href="tel:+40765470519">
+                                <svg fill="currentColor" height="1em" stroke="currentColor" stroke-width="0"
+                                     viewBox="0 0 512 512" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path>
+                                </svg>
+                                Telefon</a></div>
+
+                            <form class="contact-form" name="contact-form" id="contact-form" action="https://curatel.ue.r.appspot.com" method="POST">
+                            <div class="form-group">
+                                    <label for="phone">Telefon</label>
+                                    <input id="phone" name="phone" required="" type="tel" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input id="email" name="email" required="" type="email" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">Oras</label>
+                                    <input id="city" name="city" required="" type="text" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Mesaj</label>
+                                    <textarea id="message" name="message" required="" rows="4"></textarea>
+                                </div>
+                                <input name="csrfToken" type="hidden" value="">
+                                <button class="g-recaptcha" data-sitekey="6Lf_u60qAAAAAK2KeWwAJQsLB9Jrjcad2kWEP9In" data-callback='onSubmit' data-action='submit' type="submit">Trimite</button>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>© 2025 Curatel. Toate drepturile rezervate.</p>
+            <a class="footer-link" data-discover="true" href="./policy.html">Privacy Policy</a> |
+            <a class="footer-link" data-discover="true" href="https://anpc.ro/" target="_blank" rel="nofollow">ANPC</a>
+
+        </footer>
+
+        <div class="cookie-consent-banner" id="cookieConsentBanner">
+            <p>Acest site folosește cookie-uri pentru a vă asigura că aveți cea mai bună experiență pe site-ul nostru.
+                <a href="./policy.html" target="_blank">Learn more</a>
+            </p>
+            <button id="acceptCookies">Accept</button>
+            <button id="denyCookies">Refuz</button>
+        </div>
+    </div>
+</div>
+<div id="sparkleContainer"></div>
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf_u60qAAAAAK2KeWwAJQsLB9Jrjcad2kWEP9In"></script>
+<script crossorigin="" src="./index.js" type="module"></script>
+<script>
+    function onSubmit(token) {
+        console.log('submit', token);
+        document.getElementById("contact-form").submit();
+    }
+</script>
+<script>
+    function openNav() {
+        document.getElementById("meniuCuratel").classList.add("open");
+    }
+
+    function closeNav() {
+        document.getElementById("meniuCuratel").classList.remove("open");
+    }
+
+    document.querySelectorAll('.overlay-content a').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            closeNav();
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    function openPage(pageName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+
+    function createSparkle() {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.top = `${100 + Math.random() * (window.innerHeight - 100)}px`;
+        sparkle.style.left = `${50 + Math.random() * (window.innerWidth - 100)}px`;
+        document.body.appendChild(sparkle);
+
+        // Use requestAnimationFrame for smoother animations
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        });
+    }
+
+    const sparkleInterval = setInterval(createSparkle, 300); // Reduced interval time to 300ms
+
+    window.addEventListener('beforeunload', () => {
+        clearInterval(sparkleInterval);
+    });
+</script>
+<script async="async" data-rh="true" src="https://www.googletagmanager.com/gtag/js?id=G-2YH8XH5D1Y"></script>
+<script>
+    document.getElementById('acceptCookies').addEventListener('click', function() {
+        document.cookie = "cookieConsent=accepted; path=/; max-age=" + (48 * 60 * 60);
+        document.getElementById('cookieConsentBanner').style.display = 'none';
+        if (typeof gtag === 'function') {
+            gtag('config', 'G-2YH8XH5D1Y');
+        }
+    });
+
+    document.getElementById('denyCookies').addEventListener('click', function() {
+        document.cookie = "cookieConsent=denied; path=/; max-age=" + (48 * 60 * 60);
+        document.getElementById('cookieConsentBanner').style.display = 'none';
+    });
+
+    if (getCookie('cookieConsent') !== null) {
+        document.getElementById('cookieConsentBanner').style.display = 'none';
+        if (getCookie('cookieConsent') === 'accepted' && typeof gtag === 'function') {
+            gtag('config', 'G-2YH8XH5D1Y');
+        }
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+</script>
 </body>
 </html>
