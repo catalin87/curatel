@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,900;1,14..32,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,800;1,14..32,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+body {
+    background: linear-gradient(135deg, #3576ec, #a8def9, #afeff6);
+    color: #000000!important;
+    font-family: Roboto, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.inter-font {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.App {
+    text-align: center;
+    flex: 1;
+    color: #000000;
+}
+
+.logo {
+    max-width: 400px;
+    width: 80%;
+}
+.subtitle-box {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    padding:20px;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.container {
+    padding: 0;
+}
+
+.call-to-action {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: center; /* Center the buttons */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+.contact-button {
+    background-color: #3576ec;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button .button-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-button .icon {
+    font-size: 2em;
+}
+
+.contact-button:hover {
+    background-color: #285bb5;
+    transform: scale(1.05);
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+
+.contact-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+}
+
+.subtitle {
+    margin-top:15px;
+}
+
+
+.service-item {
+    max-width: 90vw;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%; /* Set the width to 100% */
+    position: fixed;
+    z-index: 1000;
+    left: -100%; /* Start off-screen to the left */
+    top: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: transform 0.5s; /* Use transform for smooth sliding */
+}
+
+.overlay.open {
+    transform: translateX(100%); /* Slide in from left to right */
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.image-container img {
+    height: 200px;
+    width: 48%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-item svg {
+    color: #1DA851;
+}
+
+.tabcontent ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+.costs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.costs-table th, .costs-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.costs-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.costs-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.costs-table tr:nth-child(odd) {
+    background-color: rgba(249, 249, 249, 0.82);
+}
+
+.costs-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.additional-info {
+    width: 100%;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #32cd32;
+    border-top: 5px solid transparent;
+    font-style: italic;
+    color: #555;
+    box-sizing: border-box;
+    margin: auto auto;
+    text-align: left;
+}
+
+.footer {
+    background-color: #1e3c72!important;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.whatsapp-button {
+    background-color: #25d366; /* WhatsApp green */
+}
+
+.phone-button {
+    background-color: #007bff; /* Phone blue */
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #32cd32; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #28a745;
+    transform: scale(1.05);
+}
+
+.CookieConsent {
+    background: #2B373B;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px; /* Reduced padding */
+    font-size: 12px; /* Reduced font size */
+}
+
+.CookieConsent button {
+    background: #4e503b;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px; /* Reduced padding */
+    cursor: pointer;
+    font-size: 12px; /* Reduced font size */
+    margin-left: 10px;
+}
+
+.CookieConsent a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: rgba(128, 128, 128, 0.5); /* Grey with 50% transparency */
+    border-bottom-right-radius: 60px; /* 1/4 circle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    padding-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger div {
+    width: 25px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.tablink {
+    background-color: #3576ec; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 2%; /* Padding */
+    font-size: 16px; /* Font size */
+    width: 40%; /* Full width */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    margin: 5px 2%; /* Margin between buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.tablink:hover {
+    background-color: #285bb5; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.tablink:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff; /* White text color */
+    background-color: #3576ec; /* Blue background color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em; /* Larger font size */
+    padding: 10px 20px; /* Padding for a larger clickable area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    margin-bottom: 20px;
+}
+
+.back-link:hover {
+    background-color: #285bb5; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.back-link:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2B373B;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.cookie-consent-banner p {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.cookie-consent-banner button {
+    background: #4e503b;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+/* Sparkle animation */
+.sparkle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0) 70%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: sparkle 1s infinite;
+    pointer-events: none;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}

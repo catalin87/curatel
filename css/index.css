@@ -1,0 +1,635 @@
+
+body {
+    background: linear-gradient(135deg, #3576ec, #a8def9, #afeff6);
+    color: #000000!important;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* minimum height of full viewport height */
+    margin: 0; /* remove default margin */
+    display: flex;
+    flex-direction: column;
+}
+
+.inter-font {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+.App {
+    text-align: center;
+    flex: 1; /* make .App take up remaining space */
+    color: #000000;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.8); /* Increase initial and final scale */
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5); /* Increase middle scale */
+    }
+}
+
+/* Sparkle effect */
+.sparkle {
+    position: absolute;
+    width: 20px; /* Increase width */
+    height: 20px; /* Increase height */
+    background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0) 70%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond shape */
+    animation: sparkle 1s infinite;
+    pointer-events: none; /* make sparkles non-interactive */
+}
+
+@keyframes move-sparkle {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        top: 100%;
+        left: 100%;
+    }
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle-box {
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    width: 100vw; /* Full viewport width */
+    padding: 20px; /* Padding for content */
+    box-sizing: border-box; /* Include padding in width */
+    margin-top: 15px; /* Margin to separate from other elements */
+    position: relative; /* Ensure it stays within the viewport */
+    left: 50%; /* Center the box */
+    transform: translateX(-50%); /* Center the box */
+}
+
+.container {
+    padding: 0; /* Remove padding from the container */
+}
+
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+.contact-button {
+    background-color: #3576ec; /* Blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px; /* Add margin between buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.contact-button .button-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.contact-button .icon {
+    font-size: 2em; /* Increase icon size */
+}
+
+.contact-button:hover {
+    background-color: #285bb5; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+.contact-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* WhatsApp green background */
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851; /* Darker green on hover */
+}
+.subtitle {
+    margin-top:15px;
+}
+
+b, strong, h1, h2, h3, h4, h5, h6 {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    b, strong, h1, h2, h3, h4, h5, h6 {
+        color: black;
+    }
+}
+.service-item {
+    max-width: 90vw;
+}
+
+/* About.css */
+.about-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+    line-height: 1.6; /* Improve readability */
+    font-size: 18px; /* Increase font size */
+}
+
+.about-container .title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px; /* Increase title font size */
+}
+
+.about-container p {
+    margin-bottom: 15px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.image-container img {
+    height: 200px; /* Set equal height for both images */
+    width: 48%; /* Make both images together take full width */
+    object-fit: cover; /* Ensure images cover the display area without altering proportions */
+    border-radius: 8px;
+}
+
+/* animations.css */
+.fade-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.fade-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+.fade-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+.fade-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
+
+/* Contact.css */
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.whatsapp-button {
+    background-color: #25d366; /* WhatsApp green */
+}
+
+.phone-button {
+    background-color: #007bff; /* Phone blue */
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #32cd32; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #28a745;
+    transform: scale(1.05);
+}
+
+.CookieConsent {
+    background: #2B373B;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px; /* Reduced padding */
+    font-size: 12px; /* Reduced font size */
+}
+
+.CookieConsent button {
+    background: #4e503b;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px; /* Reduced padding */
+    cursor: pointer;
+    font-size: 12px; /* Reduced font size */
+    margin-left: 10px;
+}
+
+.CookieConsent a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Costs.css */
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.costs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.costs-table th, .costs-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.costs-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.costs-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.costs-table tr:nth-child(odd) {
+    background-color: rgba(249, 249, 249, 0.82);
+}
+
+.costs-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.additional-info {
+    margin-top: 0px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #32cd32; /* Green border */
+    border-top: 5px solid transparent; /* Green border */
+    font-style: italic;
+    color: #555;
+}
+
+.footer {
+    background-color: #1e3c72!important; /* Dark blue background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.footer-link {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Custom styles for the mobile menu */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    right: 36px; /* Move to the right corner */
+    top: 36px;
+}
+
+.bm-burger-bars {
+    background: #ffffff; /* White color for burger bars */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+}
+
+.bm-menu {
+    background: #1e3c72; /* Dark blue background for the menu */
+    padding: 2.5em 1.5em 0;
+    font-size: 1.25em; /* Increase font size */
+    font-family: 'Roboto', sans-serif; /* Custom font family */
+}
+
+.bm-item-list a {
+    color: #ffffff; /* White color for menu items */
+    text-decoration: none;
+    margin-bottom: 20px; /* Increase spacing between items */
+    font-size: 1.35em; /* Larger font size for modern look */
+    padding: 10px 20px; /* Add padding for larger clickable area */
+    border-radius: 5px; /* Rounded corners for modern look */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.bm-item-list a:hover {
+    color: #1e3c72; /* Dark blue color on hover */
+    background: #ffffff; /* White background on hover */
+}
+
+.privacy-policy {
+    background-color: #ffffff; /* White background */
+    text-align: left; /* Align text to the left */
+    padding: 20px; /* Add padding for better readability */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for better visibility */
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 20px; /* Center the section */
+}
+
+.privacy-policy h1,
+.privacy-policy h2 {
+    font-weight: bold; /* Make headers bold */
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #3576ec;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Services.css */
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #add8e6; /* Light blue background */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tab:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.tab.active {
+    background-color: #32cd32; /* Green background */
+    font-weight: bold;
+}
+
+.tab-content {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 0.5s;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.service-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white; /* Add white background */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    text-align: left; /* Align text to the left */
+    transition: transform 0.3s;
+    width: 100%; /* Make it full width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+}
+
+.service-item:hover {
+    transform: scale(1.02);
+}
+
+.check-icon {
+    color: green;
+    margin-right: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
