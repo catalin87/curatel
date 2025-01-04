@@ -658,58 +658,6 @@
 </div>
 <div id="sparkleContainer"></div>
 <script>
-    function onSubmit(token) {
-        const form = document.getElementById("contact-form");
-        const submitButton = form.querySelector('button[type="submit"]');
-        const loadingAnimation = document.getElementById('loadingAnimation');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-
-        // Disable the submit button and show the loading animation
-        submitButton.disabled = true;
-        loadingAnimation.style.display = 'block';
-
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': '*/*'
-            },
-            mode: 'cors',
-            credentials: 'omit'
-        })
-            .then(response => response.json())
-            .then(data => {
-                // Hide the loading animation
-                loadingAnimation.style.display = 'none';
-
-                if (data.success) {
-                    // Show the success message
-                    successMessage.textContent = data.message;
-                    successMessage.style.display = 'block';
-                    errorMessage.style.display = 'none';
-                    // Clear the form inputs
-                    form.reset();
-                } else {
-                    // Show the error message
-                    errorMessage.textContent = data.message;
-                    errorMessage.style.display = 'block';
-                    successMessage.style.display = 'none';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Re-enable the submit button if there's an error
-                submitButton.disabled = false;
-                loadingAnimation.style.display = 'none';
-                errorMessage.textContent = 'An unexpected error occurred. Please try again later.';
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-            });
-    }
-
   function openNav() {
   document.getElementById("meniuCuratel").classList.add("open");
   }

@@ -504,3 +504,21 @@ body {
 .modern-button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+#successMessage, #errorMessage {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+#successMessage {
+    border: 2px solid green;
+    color: green;
+    background-color: #e6ffe6;
+}
+
+#errorMessage {
+    border: 2px solid red;
+    color: red;
+    background-color: #ffe6e6;
+}
