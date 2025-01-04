@@ -621,6 +621,8 @@
                                     <textarea id="message" name="message" required="" rows="4"></textarea>
                                 </div>
                                 <input name="csrfToken" type="hidden" value="">
+                                <div id="loadingAnimation" style="display: none;">Loading...</div>
+                                <div id="successMessage" style="display: none;">Mesajul dumneavoastra a fost transmis. Va vom raspunde in maxim 24 de ore.</div>
                                 <button class="g-recaptcha modern-button"
                                         data-sitekey="6LdhHK4qAAAAAKtcoxAD1wzXfeI8iY313OZcC13d"
                                         data-callback='onSubmit'
@@ -712,6 +714,37 @@
     }
     return null;
   }
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const submitButton = this.querySelector('button[type="submit"]');
+      const loadingAnimation = document.getElementById('loadingAnimation');
+      const successMessage = document.getElementById('successMessage');
+
+      // Disable the submit button and show the loading animation
+      submitButton.disabled = true;
+      loadingAnimation.style.display = 'block';
+
+      const formData = new FormData(this);
+
+      fetch(this.action, {
+          method: 'POST',
+          body: formData
+      })
+          .then(response => response.json())
+          .then(data => {
+              // Hide the loading animation and show the success message
+              loadingAnimation.style.display = 'none';
+              successMessage.style.display = 'block';
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              // Re-enable the submit button if there's an error
+              submitButton.disabled = false;
+              loadingAnimation.style.display = 'none';
+          });
+  });
 </script>
 
 </body>
