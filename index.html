@@ -1,11 +1,12 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <link href="/vite.svg" rel="icon" type="image/svg+xml">
+    <link href="./favicon/favicon.ico" rel="icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Servicii de curatenie Constanta - Curatel</title>
     <meta content="Contact our cleaning company in Constanta, Romania." data-rh="true" name="description">
     <link crossorigin="" href="./css/app.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body>
 <div id="root">
@@ -44,7 +45,7 @@
                             </div>
                             <img alt="Curatel Logo" class="logo" src="./logo_curatel.webp">
                             <div class="call-to-action">
-                                <button class="contact-button">
+                                <button class="contact-button" onclick="window.open('tel:+40765470519', '_self')">
                                     <div class="button-content">
                                         <svg class="icon" fill="currentColor" height="1em"
                                              stroke="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em"
@@ -57,8 +58,7 @@
                                         </div>
                                     </div>
                                 </button>
-                                <button class="contact-button whatsapp-button">
-                                    <div class="button-content">
+                                <button class="contact-button whatsapp-button" onclick="window.open('https://wa.me/40765470519', '_blank')">                                    <div class="button-content">
                                         <svg class="icon" fill="currentColor" height="1em"
                                              stroke="currentColor" stroke-width="0" viewBox="0 0 448 512" width="1em"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -87,10 +87,9 @@
                                 apartament Constanța</strong>,<strong>curățenie casă Constanța</strong> sau alte nevoi
                                 de curățenie.</p>
                             <div class="image-container">
-                                <img alt="Curățenie Apartament 1"
-                                     src="./img_curatenie_apartament_1.png">
+                                <img alt="Curățenie Apartament 1" src="./img_curatenie_apartament_1.webp">
                                 <img
-                                        alt="Curățenie Apartament 2" src="./img_curatenie_apartament_2.png">
+                                        alt="Curățenie Apartament 2" src="./img_curatenie_apartament_2.webp">
                             </div>
                     </div>
                 </div>
@@ -99,10 +98,10 @@
 
                     <div class="subtitle-box">
                         <section class="section">
-                            <button class="tablink" onclick="openPage('curatenieIntretinere', this, 'green')">
+                            <button class="tablink" id="curatenieIntretinereBtn">
                                 Curatenie de intretinere
                             </button>
-                            <button class="tablink" id="defaultOpen" onclick="openPage('curatenieGenerala', this, 'green')">
+                            <button class="tablink" id="defaultOpen">
                                 Curatenie generala
                             </button>
 
@@ -412,8 +411,7 @@
                                     <textarea id="message" name="message" required="" rows="4"></textarea>
                                 </div>
                                 <input name="csrfToken" type="hidden" value="">
-                                <button class="g-recaptcha" data-sitekey="6Lf_u60qAAAAAK2KeWwAJQsLB9Jrjcad2kWEP9In" data-callback='onSubmit' data-action='submit' type="submit">Trimite</button>
-                            </form>
+                                <button class="g-recaptcha modern-button" data-sitekey="6Lf_u60qAAAAAK2KeWwAJQsLB9Jrjcad2kWEP9In" data-callback='onSubmit' data-action='submit' type="submit">Trimite</button>                            </form>
                         </div>
 
 
@@ -441,108 +439,7 @@
 <div id="sparkleContainer"></div>
 
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf_u60qAAAAAK2KeWwAJQsLB9Jrjcad2kWEP9In"></script>
-<script crossorigin="" src="./index.js" type="module"></script>
-<script>
-    function onSubmit(token) {
-        console.log('submit', token);
-        document.getElementById("contact-form").submit();
-    }
-</script>
-<script>
-    function openNav() {
-        document.getElementById("meniuCuratel").classList.add("open");
-    }
-
-    function closeNav() {
-        document.getElementById("meniuCuratel").classList.remove("open");
-    }
-
-    document.querySelectorAll('.overlay-content a').forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            closeNav();
-            const targetId = this.getAttribute('href').substring(1);
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    function openPage(pageName, elmnt, color) {
-        // Hide all elements with class="tabcontent" by default */
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        // Remove the background color of all tablinks/buttons
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
-        }
-
-        // Show the specific tab content
-        document.getElementById(pageName).style.display = "block";
-
-        // Add the specific color to the button used to open the tab content
-        elmnt.style.backgroundColor = color;
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-
-    function createSparkle() {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.style.top = `${100 + Math.random() * (window.innerHeight - 100)}px`;
-        sparkle.style.left = `${50 + Math.random() * (window.innerWidth - 100)}px`;
-        document.body.appendChild(sparkle);
-
-        // Use requestAnimationFrame for smoother animations
-        requestAnimationFrame(() => {
-            setTimeout(() => {
-                sparkle.remove();
-            }, 1000);
-        });
-    }
-
-    const sparkleInterval = setInterval(createSparkle, 300); // Reduced interval time to 300ms
-
-    window.addEventListener('beforeunload', () => {
-        clearInterval(sparkleInterval);
-    });
-</script>
-<script async="async" data-rh="true" src="https://www.googletagmanager.com/gtag/js?id=G-2YH8XH5D1Y"></script>
-<script>
-    document.getElementById('acceptCookies').addEventListener('click', function() {
-        document.cookie = "cookieConsent=accepted; path=/; max-age=" + (48 * 60 * 60);
-        document.getElementById('cookieConsentBanner').style.display = 'none';
-        if (typeof gtag === 'function') {
-            gtag('config', 'G-2YH8XH5D1Y');
-        }
-    });
-
-    document.getElementById('denyCookies').addEventListener('click', function() {
-        document.cookie = "cookieConsent=denied; path=/; max-age=" + (48 * 60 * 60);
-        document.getElementById('cookieConsentBanner').style.display = 'none';
-    });
-
-    if (getCookie('cookieConsent') !== null) {
-        document.getElementById('cookieConsentBanner').style.display = 'none';
-        if (getCookie('cookieConsent') === 'accepted' && typeof gtag === 'function') {
-            gtag('config', 'G-2YH8XH5D1Y');
-        }
-    }
-
-    function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-</script>
+<script data-rh="true" src="https://www.googletagmanager.com/gtag/js?id=G-2YH8XH5D1Y"></script>
+<script src="./index.js" type="module"></script>
 </body>
 </html>
