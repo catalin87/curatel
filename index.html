@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://www.google.com">
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-2YH8XH5D1Y"></script>
-    <script async src="https://www.google.com/recaptcha/api.js"></script>
     <script defer src="./index.min.js" type="module"></script>
     <script type="application/ld+json">
         {
@@ -658,6 +657,17 @@
 </div>
 <div id="sparkleContainer"></div>
 <script>
+
+    document.querySelectorAll('#contact-form input, #contact-form textarea').forEach(field => {
+        field.addEventListener('focus', loadReCAPTCHAScript, { once: true });
+    });
+
+    function loadReCAPTCHAScript() {
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js';
+        script.async = true;
+        document.head.appendChild(script);
+    }
 
     function onSubmit(token) {
         const form = document.getElementById("contact-form");
