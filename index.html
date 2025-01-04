@@ -437,7 +437,66 @@
     </div>
 </div>
 <div id="sparkleContainer"></div>
+<script>
+  function onSubmit(token) {
+  console.log('submit', token);
+  document.getElementById("contact-form").submit();
+  }
 
+  function openNav() {
+  document.getElementById("meniuCuratel").classList.add("open");
+  }
+
+  function closeNav() {
+  document.getElementById("meniuCuratel").classList.remove("open");
+  }
+  function openPage(pageName, elmnt, color) {
+    // Hide all elements with class="tabcontent" by default */
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Remove the background color of all tablinks/buttons
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+
+    // Show the specific tab content
+    document.getElementById(pageName).style.display = "block";
+
+    // Add the specific color to the button used to open the tab content
+    elmnt.style.backgroundColor = color;
+  }
+
+  function createSparkle() {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.top = `${100 + Math.random() * (window.innerHeight - 100)}px`;
+    sparkle.style.left = `${50 + Math.random() * (window.innerWidth - 100)}px`;
+    document.body.appendChild(sparkle);
+
+    // Use requestAnimationFrame for smoother animations
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        sparkle.remove();
+      }, 1000);
+    });
+  }
+
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+</script>
 <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf_u60qAAAAAK2KeWwAJQsLB9Jrjcad2kWEP9In"></script>
 <script data-rh="true" src="https://www.googletagmanager.com/gtag/js?id=G-2YH8XH5D1Y"></script>
 <script src="./index.js" type="module"></script>
